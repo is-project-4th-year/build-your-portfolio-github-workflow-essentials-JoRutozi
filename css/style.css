@@ -1,0 +1,379 @@
+/*=================  Google fonts =================*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+/*=================  Css Variables =================*/
+
+:root {
+  --header-height:5rem;
+
+  /* Colors */
+  --primary-color: #4a4a4a;
+  --primary-color-alt:#575757;
+  --linear-gradient: linear-gradient(
+    54deg,
+    rgba(45, 45, 45, 0.95) 34%, 
+    rgba(45, 45, 45, 0.95) 
+  );
+  --title-color: #4a4a4a;
+  --text-color:#555;
+  --text-color-alt:#999;
+  --bg-color:#fff;
+  --bg-color-alt:#e9ecef;
+  --border-color:#f1f1f1;
+
+  /*============= Font and typography =============================*/
+  --roboto-font: 'Roboto', sans-serif;
+  --mono-font: 'Roboto Mono', monospace;
+
+  --fs-h1: 3.25rem;
+  --fs-h2: 2.5rem;
+  --fs-lg: 1.25rem;
+  --fs-base: 1.125rem;
+  --fs-sm: 0.875rem;
+  --fs-xs: 0.75rem;
+
+  /*============  Font Weight  ============================*/
+  --medium: 500;
+  --semibold: 600;
+  --bold: 700;
+}
+
+/*=================  Base =================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea {
+    font-family: var(--roboto-font);
+    font-size: var(--fs-base);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height:1.5em;
+    -webkit-font: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--mono-font);
+    font-weight: var(--bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration:none;
+}
+
+button{
+    cursor: pointer;
+    background:none;
+    border: none;
+    outline: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+textarea,
+input {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/*=================  Reusable Css =================*/
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+}
+
+.grid {
+    display: grid;
+}
+
+/*================= Header =================*/
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: var(--bg-color);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+/*================= Navigation =================*/
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+/* Logo */
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.logo__img {
+  height: 36px;
+  width: 36px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.logo__text {
+  font-family: var(--mono-font);
+  font-size: 1.4rem;
+  font-weight: var(--bold);
+  color: var(--primary-color);
+}
+
+.nav__menu {
+    display: flex;
+}
+
+.nav__list {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    list-style: none;
+}
+
+.nav__link {
+    color: var(--primary-color);
+    font-size: 1.05rem;
+    font-weight: var(--semibold);
+    transition: color 0.3s ease;
+    font-family: var(--mono-font);
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav__link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.nav__link:hover::after {
+  width: 100%;
+}
+
+.nav__link:hover {
+    color: var(--primary-color-alt);
+}
+
+/* Optional: Add active link style */
+.nav__link.active {
+    color: var(--primary-color);
+    font-weight: var(--bold);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Responsive Padding for Main */
+.main {
+    padding-top: var(--header-height);
+}
+
+/*=================  Home =================*/
+.home {
+    background: url(../img/home-bg.jpg);
+    background-size: cover;
+    background-position: 50%;
+    padding-top: 5.5rem;
+    position: relative;
+}
+
+.home::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--linear-gradient);
+}
+
+.home__container {
+    grid-template-columns: 4fr 8fr;
+    column-gap: 1.875rem;
+}
+
+.home__img,
+.home__data {
+    z-index: 10;
+}
+
+.home__img {
+    width: 90%;
+    height: 380px;
+    object-fit:  cover;
+    border-radius: 0.3rem;
+    transform: translateY(3.125rem);
+    box-shadow:  0 0 27px rgb(96 96 96 / 34%);
+}
+
+.home--name,
+.home__work,
+.home__list,
+.home__social-link {
+    color: #fff;
+    font-family: var(--mono-font);
+}
+
+.home__name {
+    font-size: var(--fs-h1);
+    line-height: 1.14em;
+    margin: 0.9em 0 0.23em;
+}
+
+.home__work {
+    margin-bottom: 2.5em;
+}
+
+.home__list dt {
+    float: left;
+    font-weight: var(--bold);
+    opacity: 0.4;
+}
+
+.home__list dd {
+    padding-left: 6.25em;
+}
+
+.home__list dd:not(:last-child){
+    margin-bottom: 0.94em;
+}
+
+.home__socials {
+    margin: 1.25rem 0 2.2rem;
+}
+
+home__social-link {
+    font-size: 1.7rem;
+    line-height: 1.36em;
+    margin-right: 0.25rem;
+    opacity: 0.4;
+    transition: 0.3s;
+}
+
+.home__social-link:hover {
+    opacity: 1;
+}
+
+/*================= Sections =================*/
+.section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.section__title {
+    font-size: var(--fs-h2);
+    font-family: var(--mono-font);
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.section__text {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: var(--fs-lg);
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/*================= Skills =================*/
+.skills__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    font-family: var(--mono-font);
+}
+
+.skills__list li {
+    background-color: var(--bg-color-alt);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-weight: var(--medium);
+}
+
+.skills__category {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: var(--fs-lg);
+  color: var(--primary-color);
+  font-weight: var(--semibold);
+  text-align: center;
+}
+
+/*================= Contact =================*/
+.contact__info {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: var(--fs-lg);
+    color: var(--text-color);
+    line-height: 2;
+    text-align: left;
+    background-color: var(--bg-color-alt);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.contact__info p {
+    margin-bottom: 1rem;
+}
+
+.contact__info strong {
+    color: var(--primary-color);
+}
+
+.contact__info a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/*================= Footer =================*/
+.footer {
+    padding: 2rem 0;
+    text-align: center;
+    font-size: var(--fs-sm);
+    color: var(--text-color-alt);
+    border-top: 1px solid var(--border-color);
+}
