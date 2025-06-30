@@ -315,6 +315,30 @@ home__social-link {
     line-height: 1.6;
 }
 
+/*================= Skills =================*/
+.skills__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    font-family: var(--mono-font);
+}
+
+.skills__list li {
+    background-color: var(--bg-color-alt);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-weight: var(--medium);
+}
+
+.skills__category {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: var(--fs-lg);
+  color: var(--primary-color);
+  font-weight: var(--semibold);
+  text-align: center;
+}
 
 /*================= Footer =================*/
 .footer {
