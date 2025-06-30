@@ -340,6 +340,33 @@ home__social-link {
   text-align: center;
 }
 
+/*================= Contact =================*/
+.contact__info {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: var(--fs-lg);
+    color: var(--text-color);
+    line-height: 2;
+    text-align: left;
+    background-color: var(--bg-color-alt);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.contact__info p {
+    margin-bottom: 1rem;
+}
+
+.contact__info strong {
+    color: var(--primary-color);
+}
+
+.contact__info a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
 /*================= Footer =================*/
 .footer {
     padding: 2rem 0;
