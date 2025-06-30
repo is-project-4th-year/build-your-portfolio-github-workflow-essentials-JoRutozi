@@ -40,7 +40,7 @@ Include screenshots that demonstrate how you used GitHub to manage your project.
 ### C. Branching
 
 - Screenshot showing your branch list with meaningful naming.
-
+![branching](branches.png)
 ### D. Pull Requests
 
 - Screenshot of a pull request that’s either open or merged and linked to a related issue.
