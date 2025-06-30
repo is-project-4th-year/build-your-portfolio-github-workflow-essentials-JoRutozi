@@ -122,6 +122,91 @@ input {
     z-index: 1000;
 }
 
+/*================= Navigation =================*/
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+/* Logo */
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.logo__img {
+  height: 36px;
+  width: 36px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.logo__text {
+  font-family: var(--mono-font);
+  font-size: 1.4rem;
+  font-weight: var(--bold);
+  color: var(--primary-color);
+}
+
+.nav__menu {
+    display: flex;
+}
+
+.nav__list {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    list-style: none;
+}
+
+.nav__link {
+    color: var(--primary-color);
+    font-size: 1.05rem;
+    font-weight: var(--semibold);
+    transition: color 0.3s ease;
+    font-family: var(--mono-font);
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav__link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.nav__link:hover::after {
+  width: 100%;
+}
+
+.nav__link:hover {
+    color: var(--primary-color-alt);
+}
+
+/* Optional: Add active link style */
+.nav__link.active {
+    color: var(--primary-color);
+    font-weight: var(--bold);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Responsive Padding for Main */
+.main {
+    padding-top: var(--header-height);
+}
+
 /*=================  Home =================*/
 .home {
     background: url(../img/home-bg.jpg);
